@@ -29,7 +29,7 @@ SECRET_KEY = 'django-insecure-px2x&icrjzg$mc*-=iimr^ey=k_b9hr+kyyjv2j7@&@%b8n11f
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = ['ai-blog-generator.pages.dev']
+ALLOWED_HOSTS = ['*']
 
 
 # Application definition
