@@ -9,7 +9,7 @@ import json
 from pytube import YouTube
 import os
 import assemblyai as aai
-import google.generativeai as genai  # type: ignore 
+import google.generativeai as genai 
 from .models import BlogPost
 from dotenv import load_dotenv
 
