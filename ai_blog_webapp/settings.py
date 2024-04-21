@@ -31,6 +31,8 @@ DEBUG = True
 
 ALLOWED_HOSTS = ['ai-blog-generator-production.up.railway.app']
 
+CSRF_TRUSTED_ORIGINS = ['https://ai-blog-generator-production.up.railway.app']
+
 
 # Application definition
 
@@ -145,3 +147,6 @@ LOGIN_URL = 'login'
 
 MEDIA_URL = '/media/'
 MEDIA_ROOT = os.path.join(BASE_DIR, 'media')
+
+STATICFILES_DIRS = [os.path.join(BASE_DIR, 'static')]
+STATIC_ROOT =os.path.join(BASE_DIR, 'staticfiles')
