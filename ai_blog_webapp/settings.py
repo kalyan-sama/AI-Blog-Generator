@@ -29,7 +29,7 @@ SECRET_KEY = 'django-insecure-px2x&icrjzg$mc*-=iimr^ey=k_b9hr+kyyjv2j7@&@%b8n11f
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = ['ai-blog-generator-production.up.railway.app', '127.0.0.1:8000']
+ALLOWED_HOSTS = ['ai-blog-generator-production.up.railway.app', '127.0.0.1']
 
 CSRF_TRUSTED_ORIGINS = ['https://ai-blog-generator-production.up.railway.app']
 
@@ -149,4 +149,4 @@ MEDIA_URL = '/media/'
 MEDIA_ROOT = os.path.join(BASE_DIR, 'media')
 
 STATICFILES_DIRS = [os.path.join(BASE_DIR, 'static')]
-STATIC_ROOT =os.path.join(BASE_DIR, 'staticfiles')
+STATIC_ROOT =os.path.join(BASE_DIR, 'static')
