@@ -95,8 +95,11 @@ def get_yt_title(link):
 def download_audio(link):
     yt = YouTube(link)
     video = yt.streams.filter(only_audio=True).first()
+    print("Downloading YT video")
     out_file = video.download(output_path=settings.MEDIA_ROOT)
     base, ext = os.path.splitext(out_file)
+
+    print("converting mp4 to mp3")
     new_file = base + '.mp3'
     os.rename(out_file, new_file)
     return new_file
@@ -106,6 +109,7 @@ def get_transcriptions(link):
     audio_file = download_audio(link)
     aai.settings.api_key = os.getenv("AAI_API_KEY")
     
+    print("Generating transcript using audio file...")
     transcriber = aai.Transcriber()
     transcript = transcriber.transcribe(audio_file)
     
