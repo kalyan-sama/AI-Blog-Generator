@@ -6,7 +6,8 @@ from django.views.decorators.csrf import csrf_exempt
 from django.http import JsonResponse
 from django.conf import settings
 import json
-from pytube import YouTube
+from pytubefix import YouTube
+from pytubefix.cli import on_progress
 import os
 import assemblyai as aai
 import google.generativeai as genai 
@@ -93,16 +94,20 @@ def get_yt_title(link):
         return "Cant Retrieve YouTube title: " + str(e)
 
 def download_audio(link):
-    yt = YouTube(link)
-    video = yt.streams.filter(only_audio=True).first()
-    print("Downloading YT video")
-    out_file = video.download(output_path=settings.MEDIA_ROOT)
-    base, ext = os.path.splitext(out_file)
+    # yt = YouTube(link)
+    # video = yt.streams.filter(only_audio=True).first()
+    # print("Downloading YT video")
+    # out_file = video.download(output_path=settings.MEDIA_ROOT)
+    # base, ext = os.path.splitext(out_file)
 
-    print("converting mp4 to mp3")
-    new_file = base + '.mp3'
-    os.rename(out_file, new_file)
-    return new_file
+    # print("converting mp4 to mp3")
+    # new_file = base + '.mp3'
+    # os.rename(out_file, new_file)
+
+    yt = YouTube(link, on_progress_callback = on_progress)
+    ys = yt.streams.get_audio_only()
+    audio_file = ys.download(mp3=True, output_path=settings.MEDIA_ROOT) 
+    return audio_file
 
 
 def get_transcriptions(link):
