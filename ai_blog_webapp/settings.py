@@ -29,9 +29,9 @@ SECRET_KEY = 'django-insecure-px2x&icrjzg$mc*-=iimr^ey=k_b9hr+kyyjv2j7@&@%b8n11f
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = ['ai-blog-generator-2567.onrender.com', '127.0.0.1', 'localhost', 'ai-blog-generator-kalyan.koyeb.app']
+ALLOWED_HOSTS = ['127.0.0.1', 'localhost', 'ai-blog-generator.koyeb.app']
 
-CSRF_TRUSTED_ORIGINS = ['https://ai-blog-generator-2567.onrender.com']
+CSRF_TRUSTED_ORIGINS = ['https://ai-blog-generator.koyeb.app']
 
 
 # Application definition
